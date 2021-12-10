@@ -5,9 +5,9 @@
         ADD R1 R1 #2 ;R1 <= 2
         ADD R7 R1 #0 ;R7 <= R1 
         ADD R0 R0 #-2
-        BRn OUTPUT   ;R0 - 2 == negitive --> OUTPUT
+        BRn OUTPUT1   ;R0 - 2 == negitive --> OUTPUT
         ;cycle
-AGAIN   BRz OUTPUT   ;R0 - 2 == 0 -->OUTPUT
+AGAIN   BRz OUTPUT2   ;R0 - 2 == 0 -->OUTPUT
         ADD R3 R3 R3 ;R3 = 2 * R3
         ADD R7 R1 R3 ;R7 = R1 + R3 
         AND R3 R3 #0
@@ -16,10 +16,11 @@ AGAIN   BRz OUTPUT   ;R0 - 2 == 0 -->OUTPUT
         ADD R2 R1 #0 ;R2 <= R1
         AND R1 R1 #0
         ADD R1 R7 #0 ;R1 <= R7
-        ADD R0 R0 -1
+        ADD R0 R0 #-1
         BRnzp AGAIN
         ;output
-OUTPUT  LD R4 TEMP
+OUTPUT1 ADD R7 R7 #-1      
+OUTPUT2 LD  R4 TEMP
         AND R7 R7 R4 ;R7 = R7 mod 1024
         TRAP x25
 TEMP    .FILL x03FF
