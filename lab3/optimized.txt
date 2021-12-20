@@ -1,0 +1,66 @@
+    .ORIG x3000
+    NOT R0 R0
+    ADD R0 R0 #1      ;n取反加一
+    ;树型查找
+    LD R1 N7         ;与4200比较
+    ADD R2 R1 R0
+    BRp S1
+    BRn S2
+    LD R7 ANS7
+    HALT
+S1  LD R1 N4         ;与1088比较
+    ADD R2 R1 R0
+    BRp S3
+    BRn S4
+    LD R7 ANS4
+    HALT
+S2  LD R1 N9         ;与12000比较
+    ADD R2 R1 R0
+    BRp S5
+    BRn S6
+    LD R7 ANS9
+    HALT
+S3  LD R1 N2         ;与144比较
+    ADD R2 R1 R0
+    BRp S7
+    BRn S8
+    LD R7 ANS2
+    HALT
+S4  LD R1 N6         ;与2096比较
+    ADD R2 R1 R0
+    BRp S9
+    LD R7 ANS6
+    HALT
+S5  LD R7 ANS8 
+    HALT
+S6  LD R7 ANS10 
+    HALT
+S7  LD R7 ANS1  
+    HALT
+S8  LD R7 ANS3  
+    HALT
+S9  LD R7 ANS5 
+    HALT
+
+N1 .FILL #24
+N2 .FILL #144
+N3 .FILL #456
+N4 .FILL #1088
+N5 .FILL #1092
+N6 .FILL #2096
+N7 .FILL #4200
+N8 .FILL #8192
+N9 .FILL #12000
+N10 .FILL #14000
+
+ANS1 .FILL #706
+ANS2 .FILL #642
+ANS3 .FILL #66
+ANS4 .FILL #2
+ANS5 .FILL #290
+ANS6 .FILL #898
+ANS7 .FILL #322
+ANS8 .FILL #514
+ANS9 .FILL #258
+ANS10 .FILL #898
+.END
