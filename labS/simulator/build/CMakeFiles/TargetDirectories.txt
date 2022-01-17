@@ -1,3 +1,0 @@
-/mnt/c/aMyDocuments/projects/pb20071446_ics/labS/simulator/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/aMyDocuments/projects/pb20071446_ics/labS/simulator/build/CMakeFiles/edit_cache.dir
-/mnt/c/aMyDocuments/projects/pb20071446_ics/labS/simulator/build/CMakeFiles/lc3simulator.dir
